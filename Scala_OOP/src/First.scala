@@ -9,7 +9,7 @@ object Multiplier {
   def apply(x: Int) = new Multiplier(x)
 }
 
-object MyObj{
+object MyObj2{
   def main(args: Array[String]): Unit = {
     // Richiama il class
     val k = new Multiplier(5)
