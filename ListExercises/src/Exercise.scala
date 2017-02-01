@@ -50,8 +50,8 @@ object Exercise {
     val h2Option = Nil.headOption
     println(s"list = ${Nil} h = $h2Option")
 
-    val h2 = Nil.head
-    println(s"list = ${Nil} h = $h2")
+    /*val h2 = Nil.head
+    prìintln(s"list = ${Nil} h = $h2")*/
 
   }
 }

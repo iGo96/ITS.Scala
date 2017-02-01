@@ -33,12 +33,18 @@ object Exercises {
     output
   }
 
+  def lenStrPM(str: String): String = str match {
+    case `str` if str.length() < 4 => "short"
+    case `str` if (str.length() >= 4) && (str.length() <= 10) => "medium"
+    case _ => "long"
+  }
+
   // Write a recursive function (sumall) that given a integer value n, return the sum
   // of the first n values. (e.g. sumall(5) = 5+4+3+2+1 = 15)
   //  print the result of summall(10) and sumall(100000)
   def sumAll(value: Int): Int = {
     if (value == 0) 0
-    else value + (sumAll(value - 1))
+    else value + sumAll(value - 1)
   }
 
   // Transform the function in a tail-recursive functions
@@ -49,6 +55,7 @@ object Exercises {
     // E` possibile inglobare funzioni in altre funzioni
     // in questo modo si evita che vengano richiamate le
     // "funzioni di supporto"
+
     @tailrec // <-- controlla che sia di coda
     def sumAllT(value: Int, acc: Int): Int = {
       if (value == 0) acc
@@ -66,6 +73,7 @@ object Exercises {
   }
 
   // Given two integers a, b write a recursive function that sum the values from a to b (both inclusive)
+  @tailrec
   def sumB(a: Int, b: Int, acc: Int): Int = {
     if (a > b) acc
     else sumB(a + 1, b, acc + a)
@@ -124,19 +132,26 @@ object Exercises {
     (v: Int) => v * v
   }
 
-
   // ----------------------------------------
   def main(args: Array[String]): Unit = {
     println("sub : " + sub(2, 6))
+    println();
     println("lenStr : " + lenStr("123"))
     println("lenStr : " + lenStr("1234"))
     println("lenStr : " + lenStr("12345678901"))
+    println();
+    println("lenStrPM : " + lenStrPM("123"))
+    println("lenStrPM : " + lenStrPM("123456"))
+    println("lenStrPM : " + lenStrPM("12345678901"))
+    println();
     println("sum : " + sum(2, 4))
     println("sumSq : " + sumSq(2, 4))
     println("sumCube : " + sumCube(2, 4))
+    println();
     println("sumCust identity : " + sumCust(2, 4, identity))
     println("sumCust square : " + sumCust(2, 4, square))
     println("sumCust cube : " + sumCust(2, 4, cube))
+    println();
     println("squareRet: " + squareRet(4))
     println("squareRet: " + squareRet(8))
   }
