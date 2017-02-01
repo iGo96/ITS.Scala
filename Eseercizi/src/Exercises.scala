@@ -1,7 +1,7 @@
 import scala.annotation.tailrec
 
 /**
-  * Created by PC on 25/01/2017.
+  * Created by Igor Vukajlovic on 25/01/2017.
   */
 object Exercises {
 
@@ -135,23 +135,23 @@ object Exercises {
   // ----------------------------------------
   def main(args: Array[String]): Unit = {
     println("sub : " + sub(2, 6))
-    println();
+    println()
     println("lenStr : " + lenStr("123"))
     println("lenStr : " + lenStr("1234"))
     println("lenStr : " + lenStr("12345678901"))
-    println();
+    println()
     println("lenStrPM : " + lenStrPM("123"))
     println("lenStrPM : " + lenStrPM("123456"))
     println("lenStrPM : " + lenStrPM("12345678901"))
-    println();
+    println()
     println("sum : " + sum(2, 4))
     println("sumSq : " + sumSq(2, 4))
     println("sumCube : " + sumCube(2, 4))
-    println();
+    println()
     println("sumCust identity : " + sumCust(2, 4, identity))
     println("sumCust square : " + sumCust(2, 4, square))
     println("sumCust cube : " + sumCust(2, 4, cube))
-    println();
+    println()
     println("squareRet: " + squareRet(4))
     println("squareRet: " + squareRet(8))
   }
