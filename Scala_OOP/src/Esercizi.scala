@@ -12,10 +12,16 @@
 // Create the point p1 = Point(2, 3) and the point p2 = Point(0,0)
 //  Print distance and point resulting from the sum between p1 and p2
 //  override method toString
-class Point(val x:Int, val y:Int) {
+class Point(val x: Int, val y: Int) {
   def distance(p: Point): Double = {
-    Math.sqrt(Math.pow(x - p.x, 2) + Math.pow(y - p.y, 2))
+
+	  def square(v: Int): Double = {
+      Math.pow(v, 2)
+    }
+
+    Math.sqrt(square(x - p.x) + square(y - p.y))
   }
+
   def +(p: Point): Point = {
     new Point(x + p.x, y + p.y)
   }
@@ -27,18 +33,17 @@ class Point(val x:Int, val y:Int) {
 
 object Point {
   def apply(x: Int, y: Int): Point = new Point(x, y)
-  def origin(): Point = new Point(0,0)
+  def origin(): Point = new Point(0, 0) // l'origine è un punto con coordinate 0 e 0
 }
-
-object MyObj{
+	
+object MyObj {
   def main(args: Array[String]): Unit = {
-    val o = Point(0, 0)
+    val origin = Point(0, 0)
     val p1 = Point(2, 3)
     val p2 = Point(1, 0)
-
-    println (o.distance(p1))  // 3.605551275463989
+    println(s"${origin.toString} is ${origin.distance(p1)} from ${p1.toString}")
 
     val newPoint = p1 + p2
-    println(newPoint.toString())
+    println(s"${p1.toString} + ${p2.toString} = ${newPoint.toString}")
   }
 }
