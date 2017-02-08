@@ -22,13 +22,9 @@ class Point(val x: Int, val y: Int) {
     Math.sqrt(square(x - p.x) + square(y - p.y))
   }
 
-  def +(p: Point): Point = {
-    new Point(x + p.x, y + p.y)
-  }
+  def +(p: Point): Point = new Point(x + p.x, y + p.y)
 
-  override def toString: String = {
-    s"($x, $y)"
-  }
+  override def toString: String = s"($x, $y)"
 }
 
 object Point {
@@ -36,7 +32,7 @@ object Point {
   def origin(): Point = new Point(0, 0) // l'origine è un punto con coordinate 0 e 0
 }
 	
-object MyObj {
+object MyObj3 {
   def main(args: Array[String]): Unit = {
     val origin = Point(0, 0)
     val p1 = Point(2, 3)
